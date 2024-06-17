@@ -28,5 +28,5 @@ export default async function Web({ searchParams }) {
     );
   }
 
-  return <Suspense><div>{results && <WebSearchResults results={data} />}</div></Suspense>;
+  return <div>{results && <Suspense><WebSearchResults results={data} /></Suspense>}</div>;
 }

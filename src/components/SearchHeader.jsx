@@ -3,6 +3,7 @@ import SearchBox from "./SearchBox";
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import SearchHeaderOptions from "./SearchHeaderOptions";
+import { Suspense } from "react";
 
 export default function SearchHeader() {
   return (
@@ -16,7 +17,7 @@ export default function SearchHeader() {
           </Link>
         </div>
         <div className="flex flex-1 items-center sm:space-x-5  ">
-          <SearchBox className="flex-1" />
+          <Suspense><SearchBox className="flex-1" /></Suspense>
           <div className="hidden sm:flex items-center space-x-4">
             <RiSettings3Line className="sm:text-2xl sm:cursor-pointer" />
             <TbGridDots className="sm:text-2xl cursor-pointer" />
@@ -27,7 +28,7 @@ export default function SearchHeader() {
         </div>
       </div>
       <br/>
-      <SearchHeaderOptions />
+      <Suspense><SearchHeaderOptions /></Suspense>
     </header>
   );
 }

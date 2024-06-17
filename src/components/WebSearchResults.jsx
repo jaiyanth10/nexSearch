@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Parser from 'html-react-parser';
 import PaginationButtons from './PaginationButtons';
+import { Suspense } from 'react';
 
 export default function WebSearchResults({ results }) {
   return (
@@ -24,7 +25,7 @@ export default function WebSearchResults({ results }) {
         </div>
       ))}
       <div>
-      <PaginationButtons /> 
+      <Suspense><PaginationButtons /></Suspense> 
       </div>
     </div>
   );
