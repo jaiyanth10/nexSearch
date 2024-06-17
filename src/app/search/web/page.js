@@ -1,5 +1,6 @@
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
+import { Suspense } from 'react'
 
 export default async function Web({ searchParams }) {
   const startIndex = searchParams.start || "1";
@@ -27,5 +28,5 @@ export default async function Web({ searchParams }) {
     );
   }
 
-  return <div>{results && <WebSearchResults results={data} />}</div>;
+  return <Suspense><div>{results && <WebSearchResults results={data} />}</div></Suspense>;
 }
